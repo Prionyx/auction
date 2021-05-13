@@ -10,6 +10,7 @@ services:
     depends_on:
       - frontend
       - api
+
   frontend:
     build:
       context: frontend/docker
