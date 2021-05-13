@@ -30,7 +30,7 @@ services:
   api-php-fpm:
     build:
       context: api/docker
-      dockerfile: development/nginx/Dockerfile
+      dockerfile: development/php-fpm/Dockerfile
     volumes:
       - ./api:/app
 
