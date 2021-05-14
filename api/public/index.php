@@ -12,9 +12,5 @@ http_response_code(500);
 /** @var ContainerInterface $container */
 $container = require __DIR__ . '/../config/container.php';
 
-$app = AppFactory::createFromContainer($container);
-
-(require __DIR__ . '/../config/middleware.php')($app, $container);
-(require __DIR__ . '/../config/routes.php')($app);
-
+$app = (require __DIR__ . '/../config/app.php')($container);
 $app->run();
