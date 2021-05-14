@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 use App\Http\Action\HomeAction;
 use DI\ContainerBuilder;
-use Psr\Http\Message\ResponseFactoryInterface;
 use Slim\Factory\AppFactory;
-use Slim\Psr7\Factory\ResponseFactory;
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -17,7 +15,6 @@ $containerBuilder->addDefinitions([
     'config' => [
         'debug' => (bool)getenv('APP_DEBUG'),
     ],
-    ResponseFactoryInterface::class => Di\get(ResponseFactory::class),
 ]);
 $container = $containerBuilder->build();
 $app = AppFactory::createFromContainer($container);
