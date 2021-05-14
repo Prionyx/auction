@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-use DI\ContainerBuilder;
+use Psr\Container\ContainerInterface;
 use Slim\Factory\AppFactory;
 
 require __DIR__ . '/../vendor/autoload.php';
 
 http_response_code(500);
 
-$containerBuilder = new ContainerBuilder();
-$containerBuilder->addDefinitions(require __DIR__ . '/../config/dependencies.php');
-$container = $containerBuilder->build();
+/** @var ContainerInterface $container */
+$container = require __DIR__ . '/../config/container.php';
+
 $app = AppFactory::createFromContainer($container);
 
 (require __DIR__ . '/../config/middleware.php')($app, $container);
