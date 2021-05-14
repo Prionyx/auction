@@ -12,6 +12,7 @@
     "php-di/php-di": "^6.0",
     "slim/psr7": "^0.6.0",
     "slim/slim": "^4.3",
+    "symfony/console": "^5.0",
     "ext-json": "*"
   },
   "require-dev": {
