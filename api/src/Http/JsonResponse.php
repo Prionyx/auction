@@ -14,7 +14,7 @@ class JsonResponse extends Response
 {
     /**
      * JsonResponse constructor.
-     * @param $data
+     * @param mixed $data
      * @param int $status
      * @throws JsonException
      */

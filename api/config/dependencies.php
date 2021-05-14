@@ -9,6 +9,11 @@ $files = array_merge(
 
 $config = array_map(
     static function ($file) {
+        /**
+         * @var array
+         * @noinpection PhpIncludesInspection
+         * @psalm-suppress UnresolvableInclude
+         */
         return require $file;
     },
     $files
