@@ -34,7 +34,7 @@ class JsonResponseTest extends TestCase
     }
 
     /**
-     * @return array<mixed>
+     * @return array
      */
     public function getCases(): array
     {

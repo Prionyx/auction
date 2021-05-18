@@ -4,6 +4,7 @@ restart: down up
 lint: api-lint
 analyze: api-analyze
 test: api-test
+check: lint analyze test
 
 docker-up:
 	docker-compose up -d
