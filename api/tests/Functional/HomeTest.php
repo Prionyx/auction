@@ -10,7 +10,7 @@ class HomeTest extends WebTestCase
     {
         $response = $this->app()->handle(self::json('POST', '/'));
 
-        self::assertEquals(405, $response);
+        self::assertEquals(405, $response->getStatusCode());
     }
 
     public function testSuccess(): void
