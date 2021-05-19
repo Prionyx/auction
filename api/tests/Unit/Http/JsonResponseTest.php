@@ -5,9 +5,13 @@ declare(strict_types=1);
 namespace Test\Unit\Http;
 
 use App\Http\JsonResponse;
+use JsonException;
 use PHPUnit\Framework\TestCase;
 use stdClass;
 
+/**
+ * @covers \App\Http\JsonResponse
+ */
 class JsonResponseTest extends TestCase
 {
     public function testWithCode(): void
@@ -23,6 +27,7 @@ class JsonResponseTest extends TestCase
      * @dataProvider getCases
      * @param mixed $source
      * @param mixed $expect
+     * @throws JsonException
      */
     public function testResponse($source, $expect): void
     {
