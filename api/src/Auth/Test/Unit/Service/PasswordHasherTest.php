@@ -15,7 +15,7 @@ class PasswordHasherTest extends TestCase
 {
     public function testHash(): void
     {
-        $hasher = new PasswordHasher();
+        $hasher = new PasswordHasher(16);
 
         $hash = $hasher->hash($password = 'new-password');
 
@@ -25,7 +25,7 @@ class PasswordHasherTest extends TestCase
 
     public function testHashEmpty(): void
     {
-        $hasher = new PasswordHasher();
+        $hasher = new PasswordHasher(16);
 
         $this->expectException(InvalidArgumentException::class);
         $hasher->hash('');
