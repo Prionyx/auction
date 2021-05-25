@@ -30,14 +30,14 @@ class Token
         }
     }
 
-    public function isEqualTo(string $value): bool
-    {
-        return $this->value === $value;
-    }
-
     public function isExpiredTo(DateTimeImmutable $date): bool
     {
         return $this->expires <= $date;
+    }
+
+    public function isEqualTo(string $value): bool
+    {
+        return $this->value === $value;
     }
 
     public function getValue(): string
